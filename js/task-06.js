@@ -1,11 +1,10 @@
-document.querySelector("body").style.backgroundColor = "#EBECF0";
 const inputRef = document.getElementById("validation-input");
-inputRef.addEventListener("blur", onBlurBorderColor);
-function onBlurBorderColor(event) {
-  const inputDataLength = Number(inputRef.dataset.length);
-  const inputValueLength = Number(inputRef.value.trim().length);
 
-  if (inputValueLength === inputDataLength) {
+inputRef.addEventListener("blur", onBlurColor);
+function onBlurColor(event) {
+  const dataLength = Number(inputRef.dataset.length);
+  const valueLength = Number(inputRef.value.trim().length);
+  if (valueLength === dataLength) {
     inputRef.classList.add("valid");
     inputRef.classList.remove("invalid");
   } else {
