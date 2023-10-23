@@ -1,14 +1,16 @@
+document.querySelector("body").style.backgroundColor = "#EBECF0";
 const inputRef = document.getElementById("validation-input");
-
-inputRef.addEventListener("blur", onBlurColor);
-function onBlurColor(event) {
+inputRef.addEventListener("blur", onBlurBorderColor);
+function onBlurBorderColor(event) {
   const dataLength = Number(inputRef.dataset.length);
-  const valueLength = Number(inputRef.value.trim().length);
+  const valueLength = inputRef.value.length;
   if (valueLength === dataLength) {
-    inputRef.classList.add("valid");
-    inputRef.classList.remove("invalid");
+    changeValid("valid", "invalid");
   } else {
-    inputRef.classList.remove("valid");
-    inputRef.classList.add("invalid");
+    changeValid("invalid", "valid");
   }
+}
+function changeValid(firstClass, secondClass) {
+  inputRef.classList.add(firstClass);
+  inputRef.classList.remove(secondClass);
 }

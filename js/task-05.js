@@ -15,4 +15,4 @@ const getInputValue = ({ currentTarget }) => {
     nameRef.textContent = "Anonymous";
   }
 };
-document.querySelector("body").style.backgroundColor = "#cfd1e1";
+inputRef.addEventListener("input", getInputValue);
